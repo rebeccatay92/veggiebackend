@@ -19,11 +19,7 @@ db.once('open', function () {
 
 const app = express()
 
-app.get('/', (req, res) => {
-  res.send('all recipes by user')
-})
-
-app.use('/recipes', recipesRoute)
+app.use('/', recipesRoute)
 
 const port = process.env.PORT || 3001
 app.listen(port, () => {
