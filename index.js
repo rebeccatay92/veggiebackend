@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const router = require('./routes/router')
 
@@ -19,6 +20,7 @@ db.once('open', function () {
 
 const app = express()
 
+app.use(cors())
 app.use('/', router)
 
 const port = process.env.PORT || 3001
