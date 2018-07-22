@@ -1,4 +1,5 @@
 const recipe1 = {
+  creator: 'seededuser',
   title: 'Vanilla Bean Coconut Ice Cream',
   serves: '8 1/2 cup servings',
   time: '7 hours',
@@ -39,6 +40,7 @@ const recipe1 = {
 }
 
 const recipe2 = {
+  creator: 'seededuser',
   title: 'Cauliflower tacos',
   serves: '2',
   time: '30 mins',

@@ -20,7 +20,7 @@ let recipeSchema = new Schema({
   }],
   instructions: [String],
   creator: {
-    type: Schema.Types.ObjectId,
+    type: String, // string instead of uuid for easier seed referencing
     ref: 'User'
   }
 })

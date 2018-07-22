@@ -4,7 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
-const recipesRoute = require('./routes/recipesRoute')
+const router = require('./routes/router')
 
 const url = process.env.MONGO_URL || 'mongodb://localhost:27017/veggiebackend'
 
@@ -19,7 +19,7 @@ db.once('open', function () {
 
 const app = express()
 
-app.use('/', recipesRoute)
+app.use('/', router)
 
 const port = process.env.PORT || 3001
 app.listen(port, () => {

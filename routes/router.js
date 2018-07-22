@@ -3,6 +3,8 @@ const router = express.Router()
 
 const recipesController = require('../controllers/recipesController')
 
+const seedController = require('../controllers/seedController')
+
 // router.get('/', function (req, res) {
 //   res.send('entry point to assignment. show button to click to user recipes')
 // })
@@ -13,7 +15,9 @@ router.get('/recipes/:id', recipesController.getOneRecipe)
 
 router.post('/recipes', recipesController.createRecipe)
 
-router.get('/seedrecipes', recipesController.seedRecipes)
+router.get('/seedrecipes', seedController.seedRecipes)
+
+router.get('/seedusers', seedController.seedUsers)
 
 // router.put('/recipes/:id', function (req, res) {
 //   res.send('update recipe')
