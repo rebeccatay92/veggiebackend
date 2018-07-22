@@ -18,6 +18,7 @@ let recipeSchema = new Schema({
       amount: String
     }
   }],
+  instructions: [String],
   creator: {
     type: Schema.Types.ObjectId,
     ref: 'User'

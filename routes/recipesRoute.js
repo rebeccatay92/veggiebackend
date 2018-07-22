@@ -1,35 +1,33 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/', function (req, res) {
-  res.send('all recipes')
-})
+const recipesController = require('../controllers/recipesController')
 
-router.get('/recipes', function (req, res) {
-  res.send('list of user recipes')
-})
+// router.get('/', function (req, res) {
+//   res.send('entry point to assignment. show button to click to user recipes')
+// })
 
-router.get('/recipes/:id', function (req, res) {
-  res.send('one recipe')
-})
+router.get('/recipes', recipesController.getUserRecipes)
 
-router.post('/recipes', function (req, res) {
-  res.send('create new recipe')
-})
+router.get('/recipes/:id', recipesController.getOneRecipe)
 
-router.put('/recipes/:id', function (req, res) {
-  res.send('update recipe')
-})
+router.post('/recipes', recipesController.createRecipe)
 
-router.delete('/recipes/:id', function (req, res) {
-  res.send('delete the recipe')
-})
+router.get('/seedrecipes', recipesController.seedRecipes)
+
+// router.put('/recipes/:id', function (req, res) {
+//   res.send('update recipe')
+// })
+//
+// router.delete('/recipes/:id', function (req, res) {
+//   res.send('delete the recipe')
+// })
 
 module.exports = router
 
 /*
 restful endpoints
-get '/' root, landing page with all recipes by all users
+get '/' root
 get '/recipes', user's dashboard with their own recipes
 get '/recipes/:id', details for 1 recipe
 
