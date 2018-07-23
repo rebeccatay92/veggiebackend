@@ -2,22 +2,20 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 let recipeSchema = new Schema({
-  title: String,
-  serves: String,
+  recipeTitle: String,
+  servings: String,
   time: String,
   vegCategory: String,
   coverPhotoUrl: String,
-  ingredientList: [{
-    groupHeading: String,
-    groupedItems: [{
-      name: String,
-      amount: String
-    }],
-    item: {
-      name: String,
-      amount: String
+  groups: [
+    {
+      groupHeading: String,
+      groupedItems: [ { name: String, amount: String } ]
     }
-  }],
+  ],
+  ingredients: [
+    { name: String, amount: String }
+  ],
   instructions: [String],
   creator: {
     type: String, // string instead of uuid for easier seed referencing

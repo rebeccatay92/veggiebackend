@@ -20,7 +20,7 @@ const seedRecipes = async (req, res) => {
     // console.log('mocking', newRecipe)
     return newRecipe.save()
       .then(async createdRecipe => {
-        let creator = await User.findOne({_id: 'seeduser'})
+        let creator = await User.findOne({_id: 'seededuser'})
         creator.recipes.push(createdRecipe.id)
         return creator.save()
       })
