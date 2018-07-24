@@ -5,10 +5,6 @@ const recipesController = require('../controllers/recipesController')
 
 const seedController = require('../controllers/seedController')
 
-// router.get('/', function (req, res) {
-//   res.send('entry point to assignment. show button to click to user recipes')
-// })
-
 router.get('/recipes', recipesController.getUserRecipes)
 router.post('/recipes', recipesController.createRecipe)
 

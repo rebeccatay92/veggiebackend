@@ -10,7 +10,7 @@ const seedUsers = async (req, res) => {
     let newUser = new User(mock)
     return newUser.save()
   })
-  res.send('finished seeding users')
+  res.json('finished seeding users')
 }
 
 const seedRecipes = async (req, res) => {
@@ -25,7 +25,7 @@ const seedRecipes = async (req, res) => {
       })
       .catch(err => console.log('ERR', err))
   })
-  res.send('finished seeding recipes')
+  res.json('finished seeding recipes')
 }
 
 const reseed = async (req, res) => {
@@ -48,7 +48,7 @@ const reseed = async (req, res) => {
       .catch(err => console.log('ERR', err))
   })
 
-  res.send('ok')
+  res.json('ok')
 }
 
 module.exports = {

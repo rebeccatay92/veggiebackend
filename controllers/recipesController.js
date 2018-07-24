@@ -7,14 +7,14 @@ const getUserRecipes = async (req, res) => {
 
   let userRecipes = await Recipe.find({creator: userId})
 
-  res.send(userRecipes)
+  res.json(userRecipes)
 }
 
 const getOneRecipe = async (req, res) => {
   let recipeId = req.params.id
   let foundRecipe = await Recipe.findOne({_id: recipeId})
     .populate('creator')
-  res.send(foundRecipe)
+  res.json(foundRecipe)
 }
 
 const createRecipe = async (req, res) => {
@@ -38,7 +38,7 @@ const createRecipe = async (req, res) => {
   foundUser.recipes.push(createdRecipeId)
   await foundUser.save()
 
-  res.send(createdRecipeId)
+  res.json(createdRecipeId)
 }
 
 const updateRecipe = async (req, res) => {

@@ -7,7 +7,7 @@ const cors = require('cors')
 
 const router = require('./routes/router')
 
-const url = process.env.MONGO_URL || 'mongodb://localhost:27017/veggiebackend'
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/veggiebackend'
 
 mongoose.Promise = global.Promise
 mongoose.connect(url, { useNewUrlParser: true })
@@ -15,7 +15,7 @@ mongoose.connect(url, { useNewUrlParser: true })
 let db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error'))
 db.once('open', function () {
-  console.log('Mongoose is connected to database')
+  console.log(`Mongoose is connected to ${url}`)
 })
 
 const app = express()
