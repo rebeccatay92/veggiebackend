@@ -6,6 +6,7 @@ let userSchema = new Schema({
   username: String,
   vegCategory: String,
   avatarUrl: String,
+  about: String,
   recipes: [{
     type: Schema.Types.ObjectId,
     ref: 'Recipe'
